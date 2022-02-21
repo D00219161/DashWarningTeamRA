@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "main.scss",
+        "partials/_header.scss",
+        "partials/_navbar.scss",
+        "partials/_body.scss",
+        "partials/_map.scss",
+        "partials/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
