@@ -1,7 +1,7 @@
 // Roadside Assistance Page
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import * as React from 'react';
-import { StyleSheet, Button, Alert, Image, Pressable} from 'react-native';
+import { StyleSheet, Button, Alert, Image, Pressable, ImageBackground} from 'react-native';
 import { max } from 'react-native-reanimated';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
@@ -10,45 +10,32 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
+const RedImage = require("../assets/images/RedFaults/BrakeSystemWarningLight.jpg");
+
 export default function MostCommonFaultsScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.separator}>
       <Text style={styles.title}>Most Common Faults</Text>
       <Text onPress={() => navigation.navigate('RedFault')} style={styles.title}>Red Faults</Text>
-      <View style={styles.box}>
-        <View style={styles.inner}>
-         <Text style={styles.title}></Text>
-          </View>
-        </View>
-
-
+      <Image source={RedImage}></Image>
+       
       <Separator />
 
       <Text onPress={() => navigation.navigate('AmberFault')} style={styles.title}>Amber Faults</Text>
       <View style={styles.box}>
-        <View style={styles.inner}>
-         <Text style={styles.title}></Text>
-          </View>
+      <Image source={require('../assets/images/AmberFaults/ASBWarningLight.jpg')}/>
+      <Image source={require('../assets/images/AmberFaults/CheckEngineLight.jpg')}/>
+      <Image source={require('../assets/images/AmberFaults/LowFuelWarningLight.jpg')}/>
         </View>
 
       <Separator />
 
       <Text onPress={() => navigation.navigate('GreenFault')} style={styles.title}>Green and Blue Faults</Text>
       <View style={styles.box}>
-        <View style={styles.inner}>
-         <Text style={styles.title}></Text>
-          </View>
+      <Image source={require('../assets/images/GreenFaults/AutomaticHeadlightsSymbol.gif')}/>
+      <Image source={require('../assets/images/GreenFaults/HighBeamIndicators.gif')}/>
+      <Image source={require('../assets/images/GreenFaults/LowBeamIndicators.gif')}/>
         </View>
-
-      <Separator />
-
-      <Text onPress={() => navigation.navigate('ElectricFault')} style={styles.title}>Electric and Hybrid Faults</Text>
-      <View style={styles.box}>
-        <View style={styles.inner}>
-         <Text style={styles.title}></Text>
-          </View>
-        </View>
-
       <Separator />
     </View>
   );
@@ -97,5 +84,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
   },
 });
