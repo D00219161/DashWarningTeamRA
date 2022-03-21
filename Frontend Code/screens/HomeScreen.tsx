@@ -21,23 +21,21 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
        <ImageBackground source={localImage} resizeMode="cover" style={styles.image}>
         <Text style={styles.title}>Welcome To Dash Warning</Text>      
         <Separator /> 
-        <Text style={styles.text}>Already Have An Account?</Text>   
+        
         <Pressable style={styles.button} onPress={() => navigation.navigate('Signin')}>
         <Text style={styles.text}>Login</Text>
         </Pressable> 
-      
+
         <Separator />
 
-        <Text style={styles.text}></Text>  
-        <Pressable style={styles.button} onPress={() => navigation.navigate('CreateAccount')}>
-        <Text style={styles.text}>Create Account</Text>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('UserInput')}>
+        <Text style={styles.text}>Enter Details</Text>
         </Pressable> 
 
         <Separator />
 
-        <Text style={styles.text}></Text>   
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Scan')}>
-        <Text style={styles.text}>Not Now</Text>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('QA')}>
+        <Text style={styles.text}>Detect Fault</Text>
         </Pressable>
         </ImageBackground>
       </View>
