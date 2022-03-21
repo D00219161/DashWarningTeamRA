@@ -1,8 +1,8 @@
 // Roadside Assistance Page
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import * as React from 'react';
-import { StyleSheet, ImageBackground, Image, TouchableOpacity, Button, Alert, Pressable } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet, ImageBackground, Image, TouchableOpacity, Button, Alert, Pressable, ScrollView } from 'react-native';
+
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 

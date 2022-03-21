@@ -1,7 +1,7 @@
 // Roadside Assistance Page
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import * as React from 'react';
-import { StyleSheet, Button, Alert, Image, Pressable, ImageBackground} from 'react-native';
+import { StyleSheet, Button, Alert, Image, Pressable, ImageBackground, ScrollView} from 'react-native';
 import { max } from 'react-native-reanimated';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
@@ -10,22 +10,24 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-const RedImage = require("../assets/images/RedFaults/BrakeSystemWarningLight.jpg");
+//const RedImage = require("../assets/images/RedFaults/BrakeSystemWarningLight.jpg"); <Image source={RedImage}></Image>
 
 export default function MostCommonFaultsScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
+    <ScrollView>
     <View style={styles.separator}>
       <Text style={styles.title}>Most Common Faults</Text>
       <Text onPress={() => navigation.navigate('RedFault')} style={styles.title}>Red Faults</Text>
-      <Image source={RedImage}></Image>
+      <Image source={require('../assets/images/RedFaults/Battery.jpg')}/>
+      <Image source={require('../assets/images/RedFaults/brake_system_warning_light.jpg')}/>
+      <Image source={require('../assets/images/RedFaults/door_bonnet_warning_light.jpg')}/> 
        
       <Separator />
 
       <Text onPress={() => navigation.navigate('AmberFault')} style={styles.title}>Amber Faults</Text>
       <View style={styles.box}>
-      <Image source={require('../assets/images/AmberFaults/ASBWarningLight.jpg')}/>
-      <Image source={require('../assets/images/AmberFaults/CheckEngineLight.jpg')}/>
-      <Image source={require('../assets/images/AmberFaults/LowFuelWarningLight.jpg')}/>
+        <Image source={require('../assets/images/AmberFaults/ABS.jpg')}/>
+        <Image source={require('../assets/images/AmberFaults/traction-control.png')}/>
         </View>
 
       <Separator />
@@ -38,6 +40,7 @@ export default function MostCommonFaultsScreen({ navigation }: RootTabScreenProp
         </View>
       <Separator />
     </View>
+    </ScrollView>
   );
 }
 
@@ -76,8 +79,7 @@ const styles = StyleSheet.create({
   },
   box:{
     width: '80%',
-    height: '10%',
-    padding: 2,
+    padding: 8,
   },
   inner:{
     flex: 1,
