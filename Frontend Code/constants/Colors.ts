@@ -17,7 +17,7 @@ export default {
     text: '#17A99A',
     background: '#fff', //Middle
     tint: tintColorDark,
-    tabIconDefault: '#fff',
+    tabIconDefault: '#17A99A',
     tabIconSelected: tintColorDark,
     h1Color: '#17A99A',
     fontsize: '30px',

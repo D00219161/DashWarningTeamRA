@@ -68,9 +68,9 @@ const linking: LinkingOptions<RootStackParamList> = {
               GreenFaultScreen: 'greenfaults',
             },
           },
-          ElectricFault: {
+          BlueFault: {
             screens: {
-              ElectricFaultScreen: 'electricfaults',
+              BlueFaultScreen: 'bluefaults',
             },
           },
           Forum: {
@@ -86,6 +86,16 @@ const linking: LinkingOptions<RootStackParamList> = {
           QA: {
             screens: {
               QAScreen: 'QA',
+            },
+          },
+          DetectFault: {
+            screens: {
+              DetectFaultScreen: 'DetectFault',
+            },
+          },
+          EnterDetails: {
+            screens: {
+              EnterDetailScreen: 'EnterDetails',
             },
           },
           UserAccount: {
