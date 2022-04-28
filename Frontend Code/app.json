@@ -1,7 +1,12 @@
 {
   "expo": {
-    "name": "DashWarningCodeFrontendApp",
-    "slug": "DashWarningCodeFrontendApp",
+    "name": "DashWarning",
+    "slug": "dashwarning",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,6 +34,7 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "A Car Dashboard Fault App"
   }
 }
