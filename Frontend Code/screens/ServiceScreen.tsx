@@ -1,7 +1,7 @@
 // Roadside Assistance Page
 import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-navigation/native';
 import * as React from 'react';
-import { StyleSheet, Button, Alert, Image, TouchableOpacity, Pressable, Platform, Linking} from 'react-native';
+import { StyleSheet, Button, Alert, Image, TouchableOpacity, Pressable, Platform, Linking, ScrollView} from 'react-native';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -9,55 +9,78 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-/*makeCall = () => {
+const Separator2 = () => (
+  <View style={styles.separator2} />
+);
 
-  let phoneNumber = '';
-
-  if (Platform.OS === 'android') {
-    phoneNumber = 'tel:${1234567890}';
-  } else {
-    phoneNumber = 'telprompt:${1234567890}';
-  }
-
-  Linking.openURL(phoneNumber);
-};*/
+const Separator3 = () => (
+  <View style={styles.separator3} />
+);
 
 export default function ServiceScreen({ navigation }: RootTabScreenProps<'Service'>) {
+  {/* Make A Phone Call */}
+  const makeCall = () => {
+
+    let phoneNumber = '1234567890';
+
+    if (Platform.OS === 'android') {
+      phoneNumber = 'tel:${}';
+    } else {
+      phoneNumber = 'telprompt:${}';
+    }
+
+    Linking.openURL(phoneNumber);
+  };
+
   return (
+    <ScrollView>
     <View style={styles.container}>
   
-      <Text style={styles.title}>Roadside Assistance Numbers</Text>
-      <Separator />
+      {/* <Text style={styles.title}>Roadside Assistance Numbers</Text> */}
+    
+      <Separator3 />
+
       <Text style={styles.title}>AA Roadside Assistance</Text>
       <Pressable style={styles.button}>
       <Text style={styles.text}>0818 66 77 88</Text>
       </Pressable>
      
-      <Separator />
+      <Separator2 />
       <Text style={styles.title}>Police Service Number</Text>
       <Pressable style={styles.button} >
       <Text style={styles.text}>111 or 222</Text>
       </Pressable>
 
-      <Separator />
+      <Separator2 />
+
       <Text style={styles.title}>Fire Service Number</Text>
       <Pressable style={styles.button} >
       <Text style={styles.text}>111 or 222</Text>
       </Pressable>
 
-      <Separator />
+      <Separator2 />
+
       <Text style={styles.title}>Ambulance Service Number</Text>
       <Pressable style={styles.button} >
       <Text style={styles.text}>111 or 222</Text>
       </Pressable>
 
-      <Separator />
+      <Separator2 />
+
       <Text style={styles.title}>Irish Towing Service Number</Text>
       <Pressable style={styles.button}>
       <Text style={styles.text}>01 429 8483</Text>
       </Pressable>
-      <Separator />
+
+      <Separator2 />
+
+      <Text style={styles.title}>Ring Any Number Now!</Text>
+      <Pressable onPress={makeCall} style={styles.touchableButton} >
+          <Text style={styles.TextStyle}> Click Here To Ring</Text>
+        </Pressable>
+        <Separator/>
     </View>
+    </ScrollView>
   );
 }
 
@@ -70,17 +93,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#000',
     //color: '#17A99A',
+    alignItems: 'center',
   },
   separator: {
-    flex: 1,
+    marginVertical: 23,
     alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    justifyContent:'center', 
+    flex: 1,
+  },
+  separator2: {
+    marginVertical: 18,
+    alignItems: 'center',
+    justifyContent:'center', 
+  },
+  separator3: {
+    marginVertical: 8,
+    alignItems: 'center',
+    justifyContent:'center', 
   },
   linkText: {
     fontSize: 14,
@@ -89,7 +122,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: '#000'
+    color: '#000',
+    alignItems: 'center',
   },
   image: {
     flex: 1,
@@ -103,5 +137,22 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
     backgroundColor: '#17A99A',
+    width: '65%',
+  },
+  touchableButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#17A99A',
+    width: '65%',
+  },
+  TextStyle: {
+    color: '#fff',
+    fontSize: 22,
+    textAlign: 'center',
+    alignItems: 'center',
   },
 });

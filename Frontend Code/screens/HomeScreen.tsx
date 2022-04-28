@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, ImageBackground, Image, TouchableOpacity, Button, Alert, Pressable } from 'react-native';
+import { StyleSheet, ImageBackground, Image, TouchableOpacity, Button, Alert, Pressable, ScrollView } from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
@@ -28,13 +28,13 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
 
         <Separator />
 
-        <Pressable style={styles.button} onPress={() => navigation.navigate('UserInput')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('EnterDetails')}>
         <Text style={styles.text}>Enter Details</Text>
         </Pressable> 
 
         <Separator />
 
-        <Pressable style={styles.button} onPress={() => navigation.navigate('QA')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('DetectFault')}>
         <Text style={styles.text}>Detect Fault</Text>
         </Pressable>
         </ImageBackground>
@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#000'
+    color: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
     //: '#17A99A',
   },
   text: {
