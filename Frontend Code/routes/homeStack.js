@@ -8,9 +8,9 @@ import MostCommonFaultsScreen from "../screens/MostCommonFaultsScreen";
 import RedFaultScreen from "../screens/RedFaultScreen";
 import AmberFaultScreen from "../screens/AmberFaultScreen";
 import GreenFaultScreen from "../screens/GreenFaultScreen";
-import QAScreen from "../screens/QAScreen";
+import QAScreen from "../screens/DetectFaultScreen";
 import ServiceScreen from "../screens/ServiceScreen";
-import UserInputScreen from "../screens/UserInputScreen";
+import UserInputScreen from "../screens/EnterDetailsScreen";
 
 const screens = {
     Home: {
